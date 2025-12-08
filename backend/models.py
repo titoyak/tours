@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Text, DateTime, ForeignKey, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
-from datetime import datetime
+from datetime import datetime, timezone
 
 Base = declarative_base()
 
@@ -16,7 +16,7 @@ class ConversationNode(Base):
     content = Column(Text, nullable=False)
     role = Column(String(50), nullable=False)  # 'user' or 'assistant'
     parent_id = Column(Integer, ForeignKey('conversation_nodes.id'), nullable=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
     
     # Self-referential relationship
     parent = relationship('ConversationNode', remote_side=[id], backref='children')
