@@ -1,0 +1,88 @@
+.tree-map {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tree-map h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #667eea;
+}
+
+.treemap-content {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.treemap-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.treemap-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.treemap-content::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 10px;
+}
+
+.treemap-empty {
+  text-align: center;
+  color: #999;
+  padding: 20px;
+  font-style: italic;
+}
+
+.treemap-node {
+  margin: 5px 0;
+}
+
+.treemap-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.treemap-item:hover {
+  background: #f0f0f0;
+}
+
+.treemap-item.selected {
+  background: #667eea;
+  color: white;
+  font-weight: 600;
+}
+
+.node-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.node-role {
+  flex-shrink: 0;
+}
+
+.node-preview {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.treemap-children {
+  margin-left: 10px;
+  border-left: 2px solid #e0e0e0;
+  padding-left: 5px;
+}
