@@ -2,6 +2,25 @@
 
 This system is designed as a **demo/development application**. For production deployment, consider the following improvements:
 
+## Code Review Findings
+
+The automated code review identified these items for production improvement:
+
+### High Priority UI Improvements
+- [ ] **Replace native `alert()` calls** (6 instances in App.jsx and MessageInput.jsx)
+  - Current: Browser native alerts for errors and success messages
+  - Recommended: Toast notification system (e.g., react-toastify, sonner)
+  - Benefits: Better UX, consistent styling, non-blocking notifications
+
+- [ ] **Replace native `confirm()` dialog** (1 instance in App.jsx)
+  - Current: Browser native confirm for delete confirmation
+  - Recommended: Custom modal component with proper styling
+  - Benefits: Better control, consistent design, customizable actions
+
+### Configuration Improvements (✅ Already Addressed)
+- [x] **Host binding configuration** - Now configurable via HOST environment variable
+- [x] **Remove unused Alembic dependency** - Removed from requirements.txt
+
 ## Security Enhancements
 
 ### Authentication & Authorization
